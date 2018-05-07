@@ -9,6 +9,7 @@ class SavingsAcct :public BankAcct
 private:
 	int fee;
 
+	//Constructors and methods used in the Savings acct class
 public:
 	SavingsAcct();
 	SavingsAcct(int a, double b);

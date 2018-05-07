@@ -2,7 +2,7 @@
 #include <iostream>
 #include "BankAcct.h"
 
-
+//Constructor for bank account
 BankAcct::BankAcct()
 {
 	acctNum = 0;
@@ -28,6 +28,7 @@ double BankAcct::getBalance()
 
 }
 
+//used to check the balance of whichever account calls the method
 int BankAcct::checkBalance()
 {
 	cout << endl;
@@ -36,11 +37,14 @@ int BankAcct::checkBalance()
 
 	return 0;
 }
+
+
 string BankAcct::getAcctType()
 {
 	return type;
 }
 
+//Base deposit method for base class
 int BankAcct::deposit()
 {
 	float amount = 0;
@@ -54,6 +58,7 @@ int BankAcct::deposit()
 	return 0;
 }
 
+//Withdrawal method for base class
 int BankAcct::withdraw()
 {
 	float amount = 0;
@@ -61,7 +66,7 @@ int BankAcct::withdraw()
 	cout << "How much would you like to withdraw? ";
 	cin >> amount;
 
-	if (amount > balance)
+	if (amount > balance) //Doesn't allow the user to overdraft
 	{
 		cout << "You have insufficient funds!!" << endl;
 		return -1;
@@ -73,11 +78,13 @@ int BankAcct::withdraw()
 	}		
 }
 
+//No definition for this function bc its only used by the Checking account class
 int BankAcct::orderChecks()
 {
 	return 0;
 }
 
+//Basic way to display bank info
 void BankAcct::display()
 {
 	cout << "Account Number: " << acctNum << endl;

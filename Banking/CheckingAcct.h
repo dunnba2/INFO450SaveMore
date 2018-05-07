@@ -9,6 +9,7 @@ class CheckAcct :public BankAcct
 private:
 	double fee;
 
+	//Constructors and methods for Checking Acct class
 public:
 	CheckAcct();
 	CheckAcct(int a, double b);

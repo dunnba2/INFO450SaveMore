@@ -2,12 +2,13 @@
 #include <iostream>
 #include "CheckingAcct.h"
 
-
+//Constructor for a checking acct
 CheckAcct::CheckAcct()
 {
 	type = "Checking";
 	fee = 5;
-	cout << endl << "Type in number you'd like for your account? (Ex: 100135): ";
+	//This is how the acct number and balance are set when a checking acct is created
+	cout << endl << "Type in the number you'd like for your account? (Ex: 100135): ";
 	cin >> acctNum;
 	cout << endl << "How much would you like to deposit to begin your account?: ";
 	cin >> balance;
@@ -19,6 +20,7 @@ CheckAcct::CheckAcct(int a, double b)
 
 }
 
+//This method is similar to the rest but implements the fee if it drops below $500
 int CheckAcct::withdraw()
 {
 	char answer;
@@ -47,13 +49,12 @@ int CheckAcct::withdraw()
 			return 0;
 		}
 	}
-
-
 }
 
+//Here's where I defined the order check method 
 int CheckAcct::orderChecks()
 {
-	if (balance >= 17)
+	if (balance >= 17)//used 17 as the minimum that way fee wouldn't make the balance go negative
 	{
 		balance -= 15;
 		
@@ -77,12 +78,12 @@ int CheckAcct::orderChecks()
 		cout << "You must deposit money, then try again. " << endl;
 		return -1;
 	}
-
 }
 
+//this display method is called when a checking acct is created
 void CheckAcct::display()
 {
-	cout << endl << "**** Check Account ****" << endl << endl;
-	BankAcct::display();
+	cout << endl << "**** " << type << " ****" << endl << endl;
+	BankAcct::display();//calls the bank acct class to finish off the info displayed
 	cout << endl;
 }

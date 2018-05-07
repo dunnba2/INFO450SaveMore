@@ -9,6 +9,7 @@ class CDAcct :public BankAcct
 private:
 	int term;
 
+	//Constructors and methods used for the CD acct class
 public:
 	CDAcct();
 	CDAcct(int a, double b, int t);
