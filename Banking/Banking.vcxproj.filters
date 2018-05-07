@@ -21,12 +21,36 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CheckingAcct.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BankAcct.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SavingsAcct.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDAcct.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Banking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BankAcct.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckingAcct.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SavingsAcct.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDAcct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
