@@ -69,7 +69,7 @@ int CDAcct::withdraw()
 double CDAcct::assessInterest()
 {
 	double apr;
-	cout << "Current Balance: " << balance << endl;
+	
 	if (term < 5)
 	{
 		apr = 5;
@@ -119,8 +119,10 @@ double CDAcct::applyInterest()
 //Display method called for CD accts modified to include the term length
 void CDAcct::display()
 {
-	cout << endl << "****" << type << " ****" << endl;
-	cout << endl << "Term: " << term << endl;
+	cout << endl << "**** " << type << " ****" << endl;
+	cout << endl << "Term: " << term << " years" << endl;
 	BankAcct::display();
+	CDAcct::assessInterest();
 	cout << endl;
+	
 }

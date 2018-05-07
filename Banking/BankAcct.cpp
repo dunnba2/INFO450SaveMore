@@ -82,7 +82,7 @@ int BankAcct::orderChecks()
 void BankAcct::display()
 {
 	cout << "Account Number: " << acctNum << endl;
-	cout << "Balance: $" << balance << endl;
+	cout << "Balance: $" << balance;
 }
 
 

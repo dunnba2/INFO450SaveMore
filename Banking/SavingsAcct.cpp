@@ -68,11 +68,12 @@ int SavingsAcct::withdraw()
 double SavingsAcct::assessInterest()
 {
 	double apr;
-	cout << "Current Balance: " << balance << endl;
+	
 	if (balance < 10000)
 	{
 		apr = 1;
 		intRate = .01 / 12;
+		cout << endl;
 		cout << "Interest rate (APR): " << apr << "%";
 		cout << endl;
 		cout << "Monthly Interest: " << intRate << "%";
@@ -82,6 +83,7 @@ double SavingsAcct::assessInterest()
 	{
 		apr = 2;
 		intRate = .02 / 12;
+		cout << endl;
 		cout << "Interest rate (APR): " << apr << "%";
 		cout << endl;
 		cout << "Monthly Interest: " << intRate << "%";
@@ -114,5 +116,7 @@ void SavingsAcct::display()
 {
 	cout << endl << "**** " << type << " Account ****" << endl << endl;
 	BankAcct::display();
+	SavingsAcct::assessInterest();
 	cout << endl;
+	
 }
