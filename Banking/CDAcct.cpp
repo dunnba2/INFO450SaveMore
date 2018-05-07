@@ -65,8 +65,38 @@ int CDAcct::withdraw()
 	}	
 }
 
-//This assess interest method uses the term as the parameter
+//This method assesses the interest rate before it is applied
 double CDAcct::assessInterest()
+{
+	double apr;
+	cout << "Current Balance: " << balance << endl;
+	if (term < 5)
+	{
+		apr = 5;
+		intRate = .05 / 12;
+		cout << endl;
+		cout << "Interest rate (APR): " << apr << "%";
+		cout << endl;
+		cout << "Monthly Interest: " << intRate << "%";
+		cout << endl;
+	}
+	else
+	{
+		apr = 10;
+		intRate = .1 / 12;
+		cout << endl;
+		cout << "Interest rate (APR): " << apr << "%";
+		cout << endl;
+		cout << "Monthly Interest: " << intRate << "%";
+		cout << endl;
+	}
+
+	return 0;
+}
+
+
+//This assess interest method uses the term as the parameter
+double CDAcct::applyInterest()
 {
 	if (term < 5)
 	{
@@ -81,13 +111,15 @@ double CDAcct::assessInterest()
 
 	cout << endl;
 	cout << "Your balance after interest is $" << balance << endl;
+	cout << endl;
+
 	return 0;
 }
 
 //Display method called for CD accts modified to include the term length
 void CDAcct::display()
 {
-	cout << endl << "****" << type << " Account****" << endl;
+	cout << endl << "****" << type << " ****" << endl;
 	cout << endl << "Term: " << term << endl;
 	BankAcct::display();
 	cout << endl;

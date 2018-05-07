@@ -83,7 +83,7 @@ int CheckAcct::orderChecks()
 //this display method is called when a checking acct is created
 void CheckAcct::display()
 {
-	cout << endl << "**** " << type << " ****" << endl << endl;
+	cout << endl << "**** " << type << " Account ****" << endl << endl;
 	BankAcct::display();//calls the bank acct class to finish off the info displayed
 	cout << endl;
 }

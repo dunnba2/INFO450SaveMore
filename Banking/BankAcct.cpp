@@ -7,6 +7,7 @@ BankAcct::BankAcct()
 {
 	acctNum = 0;
 	intRate = 0;
+	apr = 0;
 	balance = 0;
 	amount = 0;
 }
@@ -17,17 +18,6 @@ BankAcct::BankAcct(int a, double b)
 	balance = b;
 }
 
-int BankAcct::getAcctNum()
-{
-	return acctNum;
-}
-
-double BankAcct::getBalance()
-{
-	return balance;
-
-}
-
 //used to check the balance of whichever account calls the method
 int BankAcct::checkBalance()
 {
@@ -36,12 +26,6 @@ int BankAcct::checkBalance()
 	cout << endl;
 
 	return 0;
-}
-
-
-string BankAcct::getAcctType()
-{
-	return type;
 }
 
 //Base deposit method for base class
@@ -76,6 +60,16 @@ int BankAcct::withdraw()
 		balance -= amount;
 		return 0;
 	}		
+}
+ 
+double BankAcct::assessInterest()
+{
+	return 0;
+}
+
+double BankAcct::applyInterest()
+{
+	return 0;
 }
 
 //No definition for this function bc its only used by the Checking account class

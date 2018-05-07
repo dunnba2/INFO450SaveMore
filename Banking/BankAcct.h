@@ -14,6 +14,7 @@ protected:
 	int acctNum;
 	double intRate;
 	double balance;
+	double apr;
 	float amount;
 	string type; 
 	
@@ -21,14 +22,13 @@ protected:
 public:
 	BankAcct();
 	BankAcct(int a, double b);
-	int getAcctNum();
-	double getBalance();
-	string getAcctType();
 	int checkBalance();
 	/*These are functions can be redefined within the subclasses*/
 	virtual int deposit();
 	virtual int withdraw();
 	virtual void display();
+	virtual double assessInterest();
+	virtual double applyInterest();
 	/*included orderChecks because the way I wrote the main function, it said 
 	it wasn't defined in the base class, it's only called for checks though*/  
 	virtual int orderChecks();

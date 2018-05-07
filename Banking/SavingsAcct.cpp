@@ -8,6 +8,7 @@ SavingsAcct::SavingsAcct()
 {
 	type = "Savings";
 	fee = 2;
+
 	//This is how the acct number and balance are set when a savings acct is created
 	cout << endl;
 	cout << "Type in the number you'd like for your account? (Ex: 100135): ";
@@ -35,10 +36,6 @@ int SavingsAcct::deposit()
 
 	balance += amount;
 
-	/*Calls interest method after a deposit is made. And 
-	unfortunately, the downfall to doing it this way
-	is that if a user decides to deopoit several times
-	in a single day, that the interest will be compounded */
 	SavingsAcct::assessInterest();
 
 	return 0;
@@ -67,8 +64,35 @@ int SavingsAcct::withdraw()
 	}
 }
 
-//method used to apply interest to savings acct
+/*Method used to assess interest rate before it is applied*/
 double SavingsAcct::assessInterest()
+{
+	double apr;
+	cout << "Current Balance: " << balance << endl;
+	if (balance < 10000)
+	{
+		apr = 1;
+		intRate = .01 / 12;
+		cout << "Interest rate (APR): " << apr << "%";
+		cout << endl;
+		cout << "Monthly Interest: " << intRate << "%";
+		cout << endl;
+	}
+	else
+	{
+		apr = 2;
+		intRate = .02 / 12;
+		cout << "Interest rate (APR): " << apr << "%";
+		cout << endl;
+		cout << "Monthly Interest: " << intRate << "%";
+		cout << endl;
+	}
+
+	return 0;
+}
+
+//method used to apply interest to savings acct
+double SavingsAcct::applyInterest()
 {
 	if (balance < 10000)
 	{
@@ -88,7 +112,7 @@ double SavingsAcct::assessInterest()
 //Display method called for a savings acct
 void SavingsAcct::display()
 {
-	cout << endl << "**** " << type << "Account ****" << endl << endl;
+	cout << endl << "**** " << type << " Account ****" << endl << endl;
 	BankAcct::display();
 	cout << endl;
 }

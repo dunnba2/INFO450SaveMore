@@ -16,5 +16,6 @@ public:
 	int deposit();
 	int withdraw();
 	double assessInterest();
+	double applyInterest();
 	void display();
 };
